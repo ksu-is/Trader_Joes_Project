@@ -26,7 +26,7 @@ These are ordinary quality-assurance concerns for trading software. They corresp
 | **Failure and ambiguous outcomes** | Exercise conservative responses to errors or unknown outcomes | General test purpose only |
 | **Activity records** | Verify relevant events can be recorded and reviewed | General test purpose only |
 
-Private test source, fixtures, inputs, assertions, thresholds, order payloads, log content, and detailed orchestration are deliberately withheld.
+This report summarizes test categories and evidence rather than reproducing test implementations.
 
 ## Reported private local results
 
@@ -51,4 +51,4 @@ An independently authored public CSV exercise previously produced **6/6 passing 
 - [ ] Gather repeatable supervised paper-integration evidence
 - [ ] Record dated results, environments, and outcome totals for future runs
 
-**Reporting policy:** A test file's existence is not a pass. Mock success is not live integration success. See [Risk Management & Safety](docs/RISK_AND_SAFETY.md) and [Disclosure Policy](DISCLOSURE_POLICY.md).
+**Reporting principle:** A test file's existence is not a pass, and mock success is not live integration success. See [Risk Management & Safety](docs/RISK_AND_SAFETY.md).

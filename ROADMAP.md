@@ -11,7 +11,7 @@
 
 Build and demonstrate a substantial Python trading-agent application, emphasizing market analysis, dependable software behavior, controlled operator interaction, repeatable testing, and clear engineering documentation. Preserve the proprietary engine while making the development effort demonstrable through verified milestones and a later local, non-executing course demonstration.
 
-**Publication boundary:** No private source, strategies, scan universe/frequency, detailed execution architecture, exact control thresholds, broker payloads, credentials, or operational trading records in this repository. Every new public item is reviewed under [DISCLOSURE_POLICY.md](DISCLOSURE_POLICY.md).
+Publication review is governed by [DISCLOSURE_POLICY.md](DISCLOSURE_POLICY.md).
 
 ---
 
@@ -68,7 +68,7 @@ Build and demonstrate a substantial Python trading-agent application, emphasizin
 - [ ] Confirm that a private-code, local SAFE-mode demonstration is an acceptable form of implementation review
 - [ ] Submit the course progress review by the official D2L deadline
 
-**Important:** Organization membership and ownership of a repository within the organization are separate requirements. This public project currently belongs to the student's personal account.
+**Repository status:** This coursework portfolio is hosted by `ksu-is`. Any additional course team permissions remain to be confirmed.
 
 ## Sprint 1 — Next two-week working plan
 
@@ -127,7 +127,8 @@ The instructor presentation is **planned**, not already completed.
 ## Phase 6 — Optional future enhancements (after core validation)
 
 - [ ] Continue reviewing analytical capability and test coverage
-- [ ] Explore a separate visual interface that consumes safe, approved progress or event data
+- [x] Document the optional [Chimp Office concept](docs/CHIMP_OFFICE_CONCEPT.md) and initial Phaser 4 setup
+- [ ] Prototype a playful 2D office with idle chimps and fictional status events
 - [ ] Investigate optional AI-assisted review without relying on it as authoritative broker evidence
 - [ ] Consider longer-duration supervised paper evaluation only after key reliability tests pass
 
@@ -145,4 +146,4 @@ For each future significant change:
 4. Update [DEVELOPMENT_STATUS.md](DEVELOPMENT_STATUS.md), [TEST_RESULTS.md](TEST_RESULTS.md), and [CHANGELOG.md](CHANGELOG.md) when the evidence changes.
 5. Review the combined public material under [DISCLOSURE_POLICY.md](DISCLOSURE_POLICY.md) before committing.
 
-**Related records:** [Development History](DEVELOPMENT_HISTORY.md) · [Research](RESEARCH.md) · [Sprint 1](SPRINT_1.md) · [Testing Evidence](TEST_RESULTS.md).
+**Related records:** [Development History](DEVELOPMENT_HISTORY.md) · [Research](RESEARCH.md) · [Sprint 1](SPRINT_1.md) · [Testing Evidence](TEST_RESULTS.md) · [Chimp Office Concept](docs/CHIMP_OFFICE_CONCEPT.md).

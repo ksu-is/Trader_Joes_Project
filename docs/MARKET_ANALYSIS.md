@@ -3,7 +3,7 @@
 **Trader Joe's Agent | Public technical overview**  
 **Reviewed:** November 16, 2026 (Eastern time)
 
-This document describes **general analytical capabilities confirmed in the private Python project**. It does not provide executable implementation details or disclose how the agent uses, configures, ranks, or combines these measures to decide what to do.
+This document explains **analytical capabilities confirmed in the Python project** and what familiar technical indicators are designed to measure.
 
 ## Why analyze multiple aspects of market behavior?
 
@@ -27,9 +27,5 @@ Meaningful analysis depends on valid observations and sufficient data. Input int
 ## What this demonstrates technically
 
 The project involves numerical computation, processing market observations, handling cases where analysis is not meaningful, and maintaining boundaries between market-data analysis and operational safeguards. These are software-engineering capabilities; they do not establish predictive accuracy or trading profitability.
-
-## Intentionally withheld
-
-No exact indicator periods, configuration values, parameter adaptation, formulas as instantiated by the private application, scoring rules, aggregation logic, candidate-universe details, scanning cadence, trade-entry conditions, or code paths are disclosed.
 
 **Related:** [Development Status](../DEVELOPMENT_STATUS.md) · [Risk Management & Safety](RISK_AND_SAFETY.md) · [Disclosure Policy](../DISCLOSURE_POLICY.md)

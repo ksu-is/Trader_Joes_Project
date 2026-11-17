@@ -43,4 +43,4 @@ See [development status](DEVELOPMENT_STATUS.md), [test evidence](TEST_RESULTS.md
 
 ## Notes
 
-This progress log intentionally avoids exposing account information, API keys, private code, proprietary implementation details, or operational trading data. It does not assert that real brokerage execution has been fully verified.
+The progress record does not establish completed brokerage integration testing.

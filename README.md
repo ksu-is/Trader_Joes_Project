@@ -21,12 +21,12 @@ See [Development History](DEVELOPMENT_HISTORY.md) and [Test Results](TEST_RESULT
 
 ## Engineering capabilities
 
-The descriptions below explain **the purpose of implemented areas**, not the system's internal design or selection rules.
+The descriptions below explain what the major development areas accomplish and how mature they are.
 
 | Area | What it addresses | Current maturity |
 | --- | --- | --- |
 | **Technical market analysis** | Trend, momentum, volatility, and volume-related observations | Implemented; broader validation ongoing |
-| **Opportunity discovery** | Identifying candidates for further evaluation | Implemented; criteria private |
+| **Opportunity discovery** | Identifying candidates for further evaluation | Implemented; broader validation ongoing |
 | **Portfolio and safety review** | Evaluating proposed activity against protective conditions | Implemented; selected offline tests reported passing |
 | **Operator oversight** | Supporting deliberate permission and supervision | Implemented; further integrated verification planned |
 | **Paper integration** | Interacting with a controlled broker-testing environment | Developed; real paper lifecycle not fully verified |
@@ -37,13 +37,13 @@ The descriptions below explain **the purpose of implemented areas**, not the sys
 
 The private implementation includes established indicator families such as **moving averages, RSI, MACD, momentum, volatility measurements, and volume-related measures**. These answer different analytical questions: whether observations suggest a trend, whether recent movement has momentum, how variable price behavior is, and whether trading activity merits closer examination.
 
-**Public technical explainer:** [Market Analysis & Indicators](docs/MARKET_ANALYSIS.md). The explainer does not disclose configured indicator periods, signal combinations, weights, scanning universe, ranking logic, timing, or trade triggers.
+**Explore:** [Market Analysis & Indicators](docs/MARKET_ANALYSIS.md) explains the indicator families and their analytical purposes.
 
 ### Risk and operational safety: deeper overview
 
 The risk-management work covers broad concerns applicable to trading software, including **position and portfolio exposure, available cash, account constraints, data integrity, operating permissions, and responses to uncertain state**. The purpose is to make failure and uncertainty explicit rather than silently treating them as permission to continue.
 
-**Public technical explainer:** [Risk Management & Safety](docs/RISK_AND_SAFETY.md). This document intentionally omits thresholds, position-sizing formulas, the actual decision sequence, and broker-specific implementation details.
+**Explore:** [Risk Management & Safety](docs/RISK_AND_SAFETY.md) describes the safeguards, engineering challenges, and evidence status.
 
 ## Quality assurance and regression testing
 
@@ -60,7 +60,7 @@ Selected, broadly applicable test categories are:
 | **Error and uncertainty handling** | Does the application respond conservatively to failures or ambiguous outcomes? |
 | **Audit and traceability** | Are important actions represented in reviewable records? |
 
-These are **test themes**, not a claim that each entire category passed in every environment. Private fixtures, assertions, exact order-response cases, thresholds, and source code are withheld. For verified scope and remaining gaps, read [Test Results](TEST_RESULTS.md).
+These are **test themes**, not a claim that each entire category passed in every environment. For recorded outcomes and remaining gaps, read [Test Results](TEST_RESULTS.md).
 
 ## Development journey
 
@@ -73,6 +73,14 @@ These are **test themes**, not a claim that each entire category passed in every
 | **Next** | Dedicated regression coverage, continued failure injection, and supervised paper verification |
 
 [Full Git-backed development history](DEVELOPMENT_HISTORY.md) · [Engineering changelog](CHANGELOG.md)
+
+## Future visual companion: the Chimp Office
+
+Imagine a lively 2D office staffed by little cartoon chimps: one watches monitors, another studies charts, a safety officer dramatically stamps **BLOCKED**, and someone is always sneaking off for coffee. Even between meaningful events, the room would feel alive with idle animations, character routines, and playful interactions.
+
+The **Chimp Office** is an optional Phaser 4 concept meant to make Trader Joe's more fun to watch, especially on a second monitor. It would portray high-level application states without taking operational control. An initial Phaser 4 package exists, but the playable office is **not yet built**.
+
+[Step inside the proposed Chimp Office](docs/CHIMP_OFFICE_CONCEPT.md)
 
 ## Upcoming priorities
 
@@ -93,6 +101,7 @@ These are **test themes**, not a claim that each entire category passed in every
 | [Test Results](TEST_RESULTS.md) | Test-module count, scoped results, and gaps |
 | [Market Analysis & Indicators](docs/MARKET_ANALYSIS.md) | High-level technical explanation of analytical tools |
 | [Risk Management & Safety](docs/RISK_AND_SAFETY.md) | Safeguards, uncertainty, and reliability principles |
+| [Chimp Office Concept](docs/CHIMP_OFFICE_CONCEPT.md) | Animated workplace vision, personalities, and proposed Phaser 4 milestones |
 | [Changelog](CHANGELOG.md) | Engineering corrections and progress |
 | [Roadmap](ROADMAP.md) | Completed work, sprint objectives, and future work |
 | [Research](RESEARCH.md) | Related open-source reference evaluation |

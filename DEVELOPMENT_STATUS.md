@@ -39,6 +39,6 @@ See [TEST_RESULTS.md](TEST_RESULTS.md) for the evidence scope and [CHANGELOG.md]
 - [ ] Strengthen error handling and auditing under adverse conditions
 - [ ] Record controlled paper-integration results before claiming greater readiness
 
-## Disclosure boundary
+## Reading the tracker
 
-The tracker omits market coverage, sampling intervals, broker request formats, decision criteria, scoring parameters, and internal dependency maps. Individual filenames may be considered for publication later under [DISCLOSURE_POLICY.md](DISCLOSURE_POLICY.md).
+Each entry reports a capability and its known verification stage. Implementation is not the same as completed validation; unresolved work remains visible in the table above.

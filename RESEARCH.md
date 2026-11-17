@@ -20,7 +20,7 @@ Freqtrade provides a real-world example of a Python application involving market
 - [ ] Document differences in project goals and limitations
 - [ ] Cite additional reference projects as needed
 
-**Important:** Evaluating a public reference does not mean incorporating third-party code into the private project. Any reuse requires a separate license review.
+**Note:** Any third-party code reuse would require a license review.
 
 ## Research log
 
@@ -31,4 +31,3 @@ Freqtrade provides a real-world example of a Python application involving market
 | Identify relevant GitHub repository | Done | Freqtrade candidate |
 | Clone reference repository | Pending | Preserve separation from private code |
 | Test setup locally | Pending | Record errors and resolutions |
-| Summarize comparison | Pending | No private strategy details |

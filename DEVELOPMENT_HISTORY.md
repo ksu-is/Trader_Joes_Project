@@ -4,7 +4,7 @@
 **Last reviewed:** November 16, 2026 (Eastern time).  
 **Dating convention:** The dates below use the **UTC dates recorded by GitHub**, not necessarily local work-session dates. Git records establish **when work was committed**, not when the project was conceived, first written, or fully validated.
 
-This public timeline is a summary of real development work. It intentionally **does not** publish private commit hashes, links, diffs, source code, API configuration, internal dependencies, algorithms, scan parameters, trading rules, or raw operational artifacts.
+This timeline summarizes the development milestones established by Git history.
 
 ## At a glance
 

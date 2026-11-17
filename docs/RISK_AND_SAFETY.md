@@ -3,7 +3,7 @@
 **Trader Joe's Agent | Public technical overview**  
 **Reviewed:** November 16, 2026 (Eastern time)
 
-This document explains the *types of reliability and risk questions* addressed by the private trading-agent project. It is **not** a specification of the internal risk engine, its thresholds, or the order of its checks.
+This document explains the **risk and reliability questions** addressed by Trader Joe's Agent and why they matter to automated systems.
 
 ## Why safety matters
 
@@ -20,7 +20,7 @@ Automated market analysis can produce candidate actions, but software must still
 | **State consistency and duplication** | Reduce ambiguity after interruptions and repeated requests | Private recovery and guard tests exist; selected suites reported passing |
 | **Reviewable activity records** | Make important events traceable for testing and investigation | Private logging/journaling functionality exists; adverse-condition tests remain |
 
-No exact limits, trading rules, quantitative exposure calculations, broker-specific behavior, or underlying implementation are included.
+Each item describes an engineering concern and its known development status.
 
 ## Example: uncertainty after interruption
 
@@ -36,9 +36,5 @@ The private project has implemented state and reconciliation safeguards and unde
 - **Production ready** is not claimed for this project.
 
 Regression tests can cover failure scenarios and help prevent repeated bugs, but a passing simulated test cannot substitute for real integration verification.
-
-## Deliberate disclosure limits
-
-This overview excludes source functions, internal call graphs, check ordering, numeric limits, position-sizing formulae, account configurations, detailed response cases, real orders, logs, credentials, and recovery storage formats.
 
 **Related:** [Test Results](../TEST_RESULTS.md) · [Market Analysis & Indicators](MARKET_ANALYSIS.md) · [Disclosure Policy](../DISCLOSURE_POLICY.md)

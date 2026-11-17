@@ -10,6 +10,7 @@ This project documents the development of **Trader Joe's Agent**, a real Python 
 
 | View | What it covers |
 | --- | --- |
+| [Development history](DEVELOPMENT_HISTORY.md) | Dated milestones derived from the private Git history, without exposing source code |
 | [Development status](DEVELOPMENT_STATUS.md) | Capability-level progress, evidence scope, and outstanding work |
 | [Test results](TEST_RESULTS.md) | Reported local test outcomes, verified limitations, and upcoming tests |
 | [Engineering changelog](CHANGELOG.md) | Resolved defects and dated development milestones |

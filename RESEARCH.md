@@ -18,34 +18,28 @@ The same early conversations discussed narrower operational scope, the separatio
 
 Only external references that can be identified and checked should be attributed to named projects or community posts.
 
-## Reference project to evaluate
+## Freqtrade — local reference-project evaluation
 
-**Freqtrade** — an open-source Python cryptocurrency trading-bot project.  
-Repository: https://github.com/freqtrade/freqtrade
+**Reference:** [Freqtrade](https://github.com/freqtrade/freqtrade), an open-source Python cryptocurrency trading bot (GPL-3.0).  
+**Local review:** November 17, 2026; `develop` at `56a3326fa7a2850a57e0548c210247334be31e82`.
 
-## Why it is relevant
+The developer **successfully cloned** the reference project in a separate research folder and inspected its configuration, documentation, license, and test organization through Windows PowerShell. The observed environment used Python 3.14.7; Freqtrade declares Python `>=3.12`. A recursive file inventory found **104 `test_*.py` files** under `tests/`, and `pyproject.toml` lists pytest and supporting testing packages.
 
-Freqtrade provides a real-world example of a Python application involving market data, strategy research, testing, and paper/dry-run workflows. It may offer useful examples of project structure, documentation practices, and repeatable testing.
+The evaluation provides a concrete example of testing organized by responsibility, with a useful distinction between *having test files*, *running tests*, and *demonstrating reliable integration*. These are research observations, not claims that Freqtrade code was reused or that Trader Joe's follows the same internal architecture.
 
-## Evaluation checklist
+**Execution limitation:** Docker was not recognized in the local PowerShell environment. No Freqtrade application, automated tests, or trading workflows were executed; no results are reported as passing.
 
-- [ ] Review its README and installation prerequisites
-- [ ] Read its published license and contribution instructions
-- [ ] Clone the project into a separate research folder
-- [ ] Attempt the documented development or test setup
-- [ ] Record the operating system, Python version, and any setup issues
-- [ ] Summarize useful engineering practices in original words
-- [ ] Document differences in project goals and limitations
-- [ ] Cite additional reference projects as needed
+**Detailed original research notes:** [Freqtrade evaluation](research/freqtrade/EVALUATION.md) · [Recorded local checks](research/freqtrade/TEST_RESULTS.md) · [Research overview](research/freqtrade/README.md).
 
-**Note:** Any third-party code reuse would require a license review.
+## Reference-project evaluation checklist
 
-## Research log
+- [x] Identify a relevant open-source reference and its source repository
+- [x] Inspect its license and project configuration
+- [x] Clone the repository separately from Trader Joe's Agent
+- [x] Record the local OS, interpreter version, revision, and structural inspection
+- [x] Summarize engineering observations and differences in purpose
+- [x] Attempt to verify Docker availability and record the unmet prerequisite
+- [ ] Execute Freqtrade or its tests in a configured environment (optional unless required by the course)
+- [ ] Review additional references if the course rubric calls for them
 
-**Status:** Candidate identified; local clone and hands-on evaluation not yet verified.
-
-| Activity | Status | Notes |
-| --- | --- | --- |
-| Identify relevant GitHub repository | Done | Freqtrade candidate |
-| Clone reference repository | Pending | Preserve separation from private code |
-| Test setup locally | Pending | Record errors and resolutions |
+**Note:** Freqtrade's GPL-3.0 license applies to its code. This public portfolio does not include Freqtrade source. The course license requirement for Trader Joe's public materials remains a separate decision.

@@ -20,7 +20,7 @@ Trader Joe's Agent is a Python software project focused on financial-market anal
 
 - [ ] Confirm the project idea is in the Teams spreadsheet and marked **Go**
 - [ ] Confirm project team/repository requirements within `ksu-is`
-- [ ] Complete the related-project clone and evaluation
+- [x] Complete the related-project clone and initial structural evaluation
 - [ ] Verify the open-source-license requirement with the instructor before choosing a license
 - [ ] Submit the D2L progress review before its deadline
 

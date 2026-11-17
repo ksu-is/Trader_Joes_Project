@@ -1,149 +1,143 @@
-# Trader Joe's Agent — Development & Semester Roadmap
+# Trader Joe's Agent — Engineering Roadmap
 
-**Project:** Trader Joe's Agent — a privately developed Python-based financial-market analysis and trading-agent project  
-**Roadmap snapshot:** November 16, 2026 (Eastern time)  
-**Maintainer:** Solo student developer  
-**Public repository role:** Progress, milestones, scoped test evidence, research, and coursework documentation — **not** a mirror of the private engine
+**Updated:** November 17, 2026 (Eastern time)  
+**Project:** Privately developed Python trading agent; public engineering and coursework portfolio  
+**Owner:** Solo student developer
 
-> **How to read this roadmap:** **Completed** = checked box. **Not completed yet** = empty box. A feature being **implemented** is different from being **offline tested**, **paper validated**, or **production-ready**. Dates for future sprints are illustrative until confirmed against the course calendar.
+This roadmap shows **where the project stands, what we will verify next, and what evidence closes each milestone**. For the reasons behind the choices, see the [Decision Log](DECISION_LOG.md); for problems solved, see [Engineering Achievements](ENGINEERING_ACHIEVEMENTS.md).
 
-## Project objectives
+## Read this first: status guide
 
-Build and demonstrate a substantial Python trading-agent application, emphasizing market analysis, dependable software behavior, controlled operator interaction, repeatable testing, and clear engineering documentation. Preserve the proprietary engine while making the development effort demonstrable through verified milestones and a later local, non-executing course demonstration.
+| Marker | Meaning |
+| --- | --- |
+| ✅ **Implemented** | Functionality or documentation exists. This does **not** mean fully validated. |
+| 🧪 **Testing** | Implemented or partially exercised; additional current verification remains. |
+| ⬜ **Next** | Concrete outstanding work with an identifiable completion condition. |
+| 🕓 **Later** | Planned after prerequisite work or course milestones. |
+| 💡 **Optional** | An enhancement, not required for the current semester's core agent. |
 
-Publication review is governed by [DISCLOSURE_POLICY.md](DISCLOSURE_POLICY.md).
+**Current emphasis:** Establish a measured regression baseline, close known caller-level and failure-path gaps, then conduct repeatable supervised paper-environment checks. The agent is **not claimed to be production-ready or approved for live-money execution**.
 
----
+## At a glance
 
-## Phase 1 — Foundations and initial implementation
+| Workstream | Status today | Immediate goal |
+| --- | --- | --- |
+| Market analysis and candidate discovery | ✅ Implemented; broader validation outstanding | Test representative data and analysis edge cases |
+| Portfolio-aware sizing and risk controls | ✅ Implemented; 🧪 verification ongoing | Confirm expected outcomes across realistic and abnormal inputs |
+| Deliberate operator authorization | ✅ Implemented; 🧪 selected tests passed historically | Include in current regression baseline |
+| Persistence, duplicate guards, recovery | ✅ Implemented; 🧪 selected tests passed historically | Test additional interrupted and failed-write cases |
+| Webull account / portfolio connectivity | ✅ Implemented integration work | Distinguish connectivity from order-lifecycle validation |
+| Controlled Webull paper workflows | 🧪 Integration developed; lifecycle validation incomplete | Capture real paper-environment observations |
+| Private regression inventory | ✅ 29 Python test modules recorded | Run and log a complete current baseline |
+| Public coursework portfolio | ✅ Established in `ksu-is` | Confirm remaining instructor requirements |
+| Chimp Office | 💡 Concept documented; Phaser 4 starter package exists | Optional prototype after core priorities |
 
-**Git evidence: October 7–15, 2026 (UTC)**
-
-- [x] Establish initial Python project and Git version history
-- [x] Implement market-data processing and general analytical features
-- [x] Implement candidate discovery and analysis capabilities
-- [x] Develop safety and portfolio-checking functionality
-- [x] Add persistent state and audit-related functionality
-- [x] Begin human-supervised workflows and controlled paper-integration support
-- [x] Add an initial set of offline regression tests
-- [ ] Complete broader scenario-level verification of the analysis features
-
-**Evidence:** Milestones and changed-file categories reviewed from private commits. These marks establish implementation work, **not** complete reliability or broker validation. See [DEVELOPMENT_HISTORY.md](DEVELOPMENT_HISTORY.md).
-
-## Phase 2 — Safety, recovery, and test hardening
-
-**Git evidence: October 20–November 16, 2026 (Eastern time)**
-
-- [x] Implement session-specific deliberate startup authorization and a non-executing observation mode
-- [x] Expand persistence, duplicate-prevention, and recovery-oriented safeguards
-- [x] Add offline tests covering interruptions, restarts, ambiguous state, and related failure conditions
-- [x] Identify and correct a reconciliation control-flow defect
-- [x] Update legacy test expectations for session-scoped permission evaluation
-- [x] Isolate an order-reconciliation test harness from operational state
-- [x] Run the repaired reconciliation, execution-permission, and cross-operation guard suites — **reported passing locally**
-- [ ] Add and pass a dedicated *main-caller* regression for empty, matching, and mismatching reconciliation outcomes
-- [ ] Test additional atomic-write, state-recovery, and audit-write failure cases in isolated environments
-- [ ] Verify planned-versus-recorded outcomes across additional code paths
-- [ ] Exercise interrupted and partially completed operations through realistic mock scenarios
-
-**Evidence:** Private Git changes and locally reported test results. This phase is **ongoing**, not certified production-ready. See [TEST_RESULTS.md](TEST_RESULTS.md).
-
-## Phase 3 — Public documentation and coursework setup
-
-**Progress documented as of November 16, 2026**
-
-- [x] Join the course's `ksu-is` GitHub organization
-- [x] Create a separate public project repository while retaining the actual engine privately
-- [x] Create a public README explaining the project and disclosure boundary
-- [x] Publish capability-level [Development Status](DEVELOPMENT_STATUS.md)
-- [x] Publish scoped [Test Results](TEST_RESULTS.md) and an [Engineering Changelog](CHANGELOG.md)
-- [x] Establish a case-by-case [Disclosure Policy](DISCLOSURE_POLICY.md)
-- [x] Review private Git history and create a sanitized [Development History](DEVELOPMENT_HISTORY.md)
-- [x] Build an independent CSV Python exercise and report **6/6 local unit tests passing**
-- [x] Replace the public branch history with a sanitized snapshot of the coursework materials
-- [ ] Confirm whether the Dream Idea assignment was submitted
-- [ ] Confirm the Teams project spreadsheet entry and **Go** designation
-- [ ] Confirm whether a team and/or repository specifically inside `ksu-is` is required
-- [ ] Confirm the instructor's public-license requirement before selecting a license
-- [ ] Confirm that a private-code, local SAFE-mode demonstration is an acceptable form of implementation review
-- [ ] Submit the course progress review by the official D2L deadline
-
-**Repository status:** This coursework portfolio is hosted by `ksu-is`. Any additional course team permissions remain to be confirmed.
-
-## Sprint 1 — Next two-week working plan
-
-**Suggested planning window:** November 16–29, 2026. **Use the actual class sprint dates if different.**  
-**Owner:** Solo developer. The items below mix remaining course requirements with achievable private-engine testing tasks.
-
-### Week 1 — Verify and organize
-
-- [x] Review private Git milestones for a factual public project timeline
-- [x] Publish public development, testing, history, and disclosure documentation
-- [ ] Complete the main-caller reconciliation regression without real broker calls
-- [ ] Record test outcomes, test scope, and any discovered defects
-- [ ] Verify the Teams project entry, class team requirements, and instructor expectations
-- [ ] Review the reference project and its documented license
-- [ ] Clone the reference project into a **separate** research folder
-
-### Week 2 — Reliability and reporting
-
-- [ ] Perform isolated failure-injection tests for file persistence and recovery
-- [ ] Investigate journal-write failure behavior and record outcomes
-- [ ] Check selected planned-versus-recorded values using synthetic test inputs
-- [ ] Document failures and corrections in the private project
-- [ ] Update the public status, test evidence, and changelog **only after verifying results**
-- [ ] Write a sprint retrospective: completed, not completed, blockers, next sprint
-- [ ] Review any required course submissions before the actual deadlines
-
-**Sprint exit criteria:** Documented results of the targeted regressions; coursework administrative status verified; reference project evaluation initiated; and a public tracker that reflects what truly happened, not what was merely planned.
-
-## Phase 4 — Controlled paper integration and reliability validation
-
-**Future milestone; not yet marked complete**
-
-- [ ] Confirm preflight safety configuration and intentional operator authorization
-- [ ] Verify correct behavior with no active orders and with unresolved simulated orders
-- [ ] Validate the intended request/acknowledgment/state lifecycle using controlled paper tests
-- [ ] Validate restart and broker reconciliation under realistic paper conditions
-- [ ] Test partial completions, cancellations, timeouts, and adverse network responses
-- [ ] Assess journaling completeness and recovery from unsuccessful writes
-- [ ] Repeat tests across multiple sessions and document observed limitations
-- [ ] Decide whether safeguards justify any *later* expansion in autonomy
-
-**Boundary:** Offline mocks are not evidence of actual broker behavior. No claim of live-trading readiness is made here. Do not publish operational order data.
-
-## Phase 5 — Semester demonstration and project presentation
-
-- [ ] Confirm the professor's expectations for evaluating private source and functionality
-- [ ] Prepare a local demonstration in non-executing observation mode
-- [ ] Sanitize terminal output, screenshots, and sample data before presentation
-- [ ] Demonstrate actual, verified application capabilities and selected automated test outcomes
-- [ ] Prepare a written explanation of engineering challenges and defect resolution
-- [ ] Present the public development timeline alongside the local demonstration
-- [ ] Complete the final course report, retrospective, and submission requirements
-
-The instructor presentation is **planned**, not already completed.
-
-## Phase 6 — Optional future enhancements (after core validation)
-
-- [ ] Continue reviewing analytical capability and test coverage
-- [x] Document the optional [Chimp Office concept](docs/CHIMP_OFFICE_CONCEPT.md) and initial Phaser 4 setup
-- [ ] Prototype a playful 2D office with idle chimps and fictional status events
-- [ ] Investigate optional AI-assisted review without relying on it as authoritative broker evidence
-- [ ] Consider longer-duration supervised paper evaluation only after key reliability tests pass
-
-These are possible future directions, not commitments to implement them during the current sprint.
+The **29 modules** were developed and exercised over multiple stages; many were run repeatedly following code changes and passed historically. A **complete, recorded run against the current version remains outstanding**. See [Testing Evidence](TEST_RESULTS.md).
 
 ---
 
-## Milestone reporting rules
+## 1. Completed foundations — October 7–15, 2026
 
-For each future significant change:
+These milestones represent **implementation history**, not proof of comprehensive validation.
 
-1. Record the **date**, general milestone, and whether it was **implemented**, **tested**, **validated in paper**, or **still planned**.
-2. Link to *public* evidence only; keep private commit hashes, logs, raw failure payloads, and source diffs unpublished.
-3. Separate passing offline tests from completed real paper-integration tests.
-4. Update [DEVELOPMENT_STATUS.md](DEVELOPMENT_STATUS.md), [TEST_RESULTS.md](TEST_RESULTS.md), and [CHANGELOG.md](CHANGELOG.md) when the evidence changes.
-5. Review the combined public material under [DISCLOSURE_POLICY.md](DISCLOSURE_POLICY.md) before committing.
+| Status | Milestone | Evidence or qualification |
+| --- | --- | --- |
+| ✅ | Python foundation, market analysis, and candidate discovery | Early private Git history |
+| ✅ | Portfolio and cash-aware risk considerations | Private implementation and development history |
+| ✅ | Fractional position sizing and explainable limiting factors | Current private risk-management code reviewed |
+| ✅ | Separate analytical recommendations and risk-based sizing | Early design discussion and subsequent implementation |
+| ✅ | Account/state handling, journaling, and early safeguards | October 13 private commits |
+| ✅ | Webull account integration and paper-integration groundwork | October 13–15 private commits |
+| ✅ | Alpaca/IEX market-data direction during development | October 15 commit and developer-confirmed cost rationale |
 
-**Related records:** [Development History](DEVELOPMENT_HISTORY.md) · [Research](RESEARCH.md) · [Sprint 1](SPRINT_1.md) · [Testing Evidence](TEST_RESULTS.md) · [Chimp Office Concept](docs/CHIMP_OFFICE_CONCEPT.md).
+**Why these decisions matter:** Read [Decision Log](DECISION_LOG.md) for the reasoning behind responsibility separation, risk explainability, and postponing paid market-data subscriptions.
+
+## 2. Reliability engineering — October 20–November 16
+
+| Status | Milestone | Evidence or qualification |
+| --- | --- | --- |
+| ✅ | Deliberate session authorization and observation mode | October 20 private commit |
+| ✅ | Stronger persistent-state and duplicate-operation protections | October 26 private commit |
+| ✅ | Offline interruption, timeout, and cross-process recovery tests added | October 26 private commit |
+| ✅ | Reconciliation control-flow defect corrected | November 16 local / November 17 UTC private commit |
+| ✅ | Selected test harnesses isolated and updated | November 16 local / November 17 UTC commits |
+| 🧪 | Three selected suites reported passing after maintenance | Developer-reported offline results; not the full suite |
+| ⬜ | Dedicated reconciliation *main-caller* regression | Record results for empty, matching, and mismatching scenarios |
+| ⬜ | Broader failed-write and journaling recovery tests | Record injected fault, expected result, and actual result |
+| ⬜ | Planned-versus-recorded outcome checks | Record discrepancies and their resolution |
+
+**What changed:** The project increasingly focused on uncertain outcomes, restarts, and safe behavior under failure—not merely adding trading features. [Engineering case studies](ENGINEERING_ACHIEVEMENTS.md).
+
+## 3. Immediate next milestones — evidence first
+
+These are the **highest-priority technical items**, in suggested sequence. Use the small checklist below to track the immediate action; retain findings in the [Test Results](TEST_RESULTS.md) document.
+
+- [ ] **T1 — Current regression baseline:** Run all applicable private test modules in an isolated, non-executing environment. Record date, test runner, passed/failed/skipped totals, and which cases were not run.
+- [ ] **T2 — Classify and address failures:** Separate legitimate regressions from outdated test expectations or environmental issues. Preserve meaningful assertions; rerun affected tests.
+- [ ] **T3 — Reconciliation caller regression:** Test the corrected main calling path across empty, matching, and mismatching outcomes; record observed results.
+- [ ] **T4 — Persistence and audit failure injection:** Exercise selected interrupted writes, state recovery, and journal-write failures without real broker submission.
+- [ ] **T5 — Paper integration evidence:** After offline checks, conduct deliberately authorized, controlled paper scenarios and document actual acknowledgement, recorded state, restart/reconciliation behavior, and unresolved outcomes.
+- [ ] **T6 — Repeatability:** Repeat critical paper checks across sessions and record whether results agree.
+
+**Completion rule:** A box is checked only once its described result is actually recorded. A passing mock test is not a paper-broker result; a paper-broker result is not live-money readiness.
+
+## 4. Controlled paper-validation checkpoints
+
+| Stage | What to demonstrate | Close when |
+| --- | --- | --- |
+| A — Preflight | Correct startup mode, safety restrictions, state known or explicitly unresolved | Evidence recorded for allowed and blocked cases |
+| B — Request lifecycle | Controlled submission, acknowledgement handling, and corresponding persisted state | Expected vs. observed results documented |
+| C — Adverse scenarios | Timeouts, rejected/cancelled or uncertain states, partial outcomes where supported | No unexamined ambiguity; results documented |
+| D — Restart consistency | Application restart and subsequent reconciliation | Recorded and external observations evaluated |
+| E — Repeat sessions | Same essential checks across separate sessions | Repeatability findings and remaining gaps recorded |
+
+All stages are **pending completion as a documented paper-validation program**. Some related behavior has been exercised in offline/mock tests; that is different evidence.
+
+## 5. Coursework and Sprint 1 — near-term
+
+**Course deadline:** User recalls **November 19, 2026**; **confirm on D2L** before treating it as official. The earlier November 16–29 window was only an illustrative engineering sprint, **not** a verified course deadline.
+
+| Status | Coursework item | What closes it |
+| --- | --- | --- |
+| ✅ | Public portfolio under `ksu-is` | Repository accessible under the organization |
+| ✅ | README, status, history, testing, disclosure documentation | Published documents in the public repository |
+| ✅ | Engineering achievements, decisions, and research narrative | Public case studies and decision record |
+| ✅ | Sprint 1 retrospective **draft** | Working document exists; not yet submitted |
+| ⬜ | Verify Teams idea entry / Go designation | Confirm directly in course materials |
+| ⬜ | Confirm Dream Idea submission and team expectations | Instructor/course record checked |
+| ⬜ | Verify license and required reference-project clone/evaluation | Requirements checked; research steps recorded |
+| ⬜ | Confirm private-code demonstration expectations | Instructor approval of review format |
+| ⬜ | Finalize and submit Sprint 1 progress review | Reflect actual sprint accomplishments and submit by confirmed deadline |
+
+**For this course submission:** use [Sprint 1 progress](SPRINT_1.md) and the [retrospective draft](SPRINT_1_RETROSPECTIVE.md). Do not mark a submission complete until it is confirmed.
+
+## 6. Semester demonstration — planned
+
+| Status | Deliverable | Completion condition |
+| --- | --- | --- |
+| 🕓 | Agree on instructor review format | Requirements and permitted demo scope confirmed |
+| 🕓 | Prepare local, non-executing demonstration | Verified application behavior shown without execution |
+| 🕓 | Demonstrate selected regression evidence | Results match documented test runs |
+| 🕓 | Explain engineering tradeoffs and defect resolution | Draw from achievements and decision history |
+| 🕓 | Finish course report and required submissions | Confirmation of completed deliverables |
+
+## 7. After the core work — deferred and optional
+
+| Status | Idea | Revisit when |
+| --- | --- | --- |
+| 🕓 | More comprehensive paid market data | Core reliability proven and a measured data need justifies cost |
+| 🕓 | Broader analytical and scenario coverage | Regression baseline and core validation are stable |
+| 🕓 | Options or short-selling support | Instrument-specific rules and a separate verification plan exist |
+| 🕓 | Longer-duration paper observation | Initial controlled lifecycle checks are repeatable |
+| 💡 | Phaser 4 Chimp Office prototype | Core testing priorities permit time for an entertaining visual companion |
+| 💡 | Additional AI-assisted analysis/review | Boundaries and human oversight remain clear |
+
+The Chimp Office's visual concept is already [documented](docs/CHIMP_OFFICE_CONCEPT.md); a playable office is not yet implemented.
+
+---
+
+## Keeping this roadmap accurate
+
+When work changes, update **the status, the evidence, and the remaining gap** together. Use the [Test Results](TEST_RESULTS.md) page for actual run totals, the [Decision Log](DECISION_LOG.md) for rationale, and [Engineering Achievements](ENGINEERING_ACHIEVEMENTS.md) for the problems and solutions. General publication boundaries remain in the [README](README.md) and [Disclosure Policy](DISCLOSURE_POLICY.md).
+
+**Related:** [Development Status](DEVELOPMENT_STATUS.md) · [Development History](DEVELOPMENT_HISTORY.md) · [Research](RESEARCH.md) · [Sprint 1](SPRINT_1.md).

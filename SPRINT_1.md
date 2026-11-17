@@ -1,0 +1,36 @@
+# Sprint 1 — Progress Review Log
+
+**Project:** Trader Joe's Agent  
+**Developer:** Solo project  
+**Reporting period:** Use the actual course Sprint 1 dates when confirmed.
+
+## Project overview
+
+Trader Joe's Agent is a Python software project focused on financial-market analysis and reliable application behavior. Development is ongoing in a separate private source repository.
+
+## Progress documented so far
+
+- Completed an initial project concept and extensive project documentation
+- Created a GitHub repository and joined the course's `ksu-is` organization
+- Created this public documentation repository
+- Implemented and exercised offline test scenarios for error handling, persistence, and program recovery in the private development project
+- Began exploring a separate visual demonstration concept for future development
+
+## Remaining course setup
+
+- [ ] Confirm the project idea is in the Teams spreadsheet and marked **Go**
+- [ ] Confirm project team/repository requirements within `ksu-is`
+- [ ] Complete the related-project clone and evaluation
+- [ ] Verify the open-source-license requirement with the instructor before choosing a license
+- [ ] Submit the D2L progress review before its deadline
+
+## Next engineering steps
+
+- [ ] Continue persistence and crash-recovery tests
+- [ ] Test planned-versus-actual recorded values
+- [ ] Review logging and error paths
+- [ ] Document repeatable results and remaining risks
+
+## Notes
+
+This progress log intentionally avoids exposing account information, API keys, private code, proprietary implementation details, or operational trading data. It does not assert that real brokerage execution has been fully verified.

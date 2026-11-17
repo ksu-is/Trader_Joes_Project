@@ -10,6 +10,14 @@ Research-informed themes include controlled operation, repeatable regression tes
 
 For the resulting design tradeoffs, see [Engineering Decision Log](DECISION_LOG.md).
 
+## Early comparative questions and decisions
+
+The initial project discussion considered using Webull for both portfolio information and market observations. Research into available developer tooling and market-data subscriptions raised a practical cost question: could the application use one service for account-related functions and another for market information? Later development retained Webull integration while using IEX market data. The choice was to prove application reliability before paying for richer data.
+
+The same early conversations discussed narrower operational scope, the separation of analysis from risk permission, and the possibility of adding more complex instruments later. These are examples of **evaluating ideas against the project's own requirements**, not evidence that any specific external code was incorporated.
+
+Only external references that can be identified and checked should be attributed to named projects or community posts.
+
 ## Reference project to evaluate
 
 **Freqtrade** — an open-source Python cryptocurrency trading-bot project.  

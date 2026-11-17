@@ -86,6 +86,8 @@ The October 26 commit recorded passing simulated recovery tests *at that time*. 
 
 [Read the engineering case studies](ENGINEERING_ACHIEVEMENTS.md) for the challenge, change, engineering lesson, and evidence behind each milestone. The [Engineering Decision Log](DECISION_LOG.md) explains important alternatives, tradeoffs, and why certain upgrades were postponed.
 
+The early design history also includes decisions shaped by hands-on testing: separating analytical proposals from risk-based position sizing, supporting fractional quantities, making constraints explainable, and preserving authorization over protected holdings. [The Decision Log](DECISION_LOG.md) records what the conversations established and what later private implementation review confirmed.
+
 ## Future visual companion: the Chimp Office
 
 Imagine a lively 2D office staffed by little cartoon chimps: one watches monitors, another studies charts, a safety officer dramatically stamps **BLOCKED**, and someone is always sneaking off for coffee. Even between meaningful events, the room would feel alive with idle animations, character routines, and playful interactions.

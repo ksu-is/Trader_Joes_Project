@@ -18,6 +18,19 @@ The developer also reports the application is connected to a real Webull portfol
 
 **Related:** [Decision Log](DECISION_LOG.md) · [Research](RESEARCH.md)
 
+### Early design decisions uncovered from development conversations
+
+Selected excerpts from the project's first development discussions show how early requirements shaped later engineering work:
+
+- **Analysis versus risk authority:** The first examples placed a share quantity with the analytical proposal. Subsequent debugging helped establish why risk management should independently determine allowable position size.
+- **Whole shares versus fractional sizing:** A zero-share result under an illustrative position cap exposed an assumption that limited the early prototype. Fractional-sizing functionality was proposed and is now confirmed in the private implementation.
+- **Explainable results:** Instead of returning only a quantity, the developer wanted to understand which constraint limited it. That discussion shaped the expectation that risk outcomes should be inspectable.
+- **Protected holdings:** A recommendation to sell or trim an existing holding was explicitly distinguished from permission to carry out the action. Protective permission logic is confirmed in the private development code.
+- **Future instrument support:** The initial choice to keep options and short-selling disabled left room for later expansion without making untested capabilities part of the first operating scope.
+- **Market data versus account access:** The initial idea of receiving both through Webull was refined after the developer raised concern about the separate market-data subscription. Subsequent development retained Webull integration alongside IEX-sourced market observations.
+
+These are selected conversation excerpts, not a complete transcript. A gap in the pasted material is not evidence of a missing implementation. The examples describe the evolution of decisions; later code and Git evidence establish what actually exists.
+
 ## What has been accomplished
 
 - Developed and committed the foundational market-analysis and candidate-review components, with subsequent expansion of safety controls and account-related validation.

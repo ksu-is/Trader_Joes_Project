@@ -75,6 +75,22 @@ Trader Joe's Agent has grown through more than feature additions. Significant wo
 
 **Lesson.** Validate the engineering foundation first, then invest in additional data capabilities when they have a clear purpose.
 
+## Achievement 07 — Improving the responsibility split between analysis and risk
+
+**Challenge.** Early trade proposals combined analytical ideas with a suggested quantity. As position sizing developed, the distinction between a promising idea and an allowable exposure became more important.
+
+**Development.** Early debugging and design discussions led to treating position sizing as a risk-management responsibility. Private implementation review confirms that the sizing work uses account context and reports relevant limits.
+
+**Lesson.** An error encountered while changing code can reveal a better component boundary. This evolution was not simply a new formula; it clarified which part of the application should be responsible for which judgment.
+
+## Achievement 08 — Learning from a zero-share sizing result
+
+**Challenge.** A whole-share assumption in an early example rejected an otherwise possible smaller position under the example's exposure limit.
+
+**Development.** Fractional-sizing support was proposed in the conversation and is now present in the private position-sizing implementation. Supporting diagnostic information also helps explain the limiting constraint.
+
+**Lesson.** Unexpected but mathematically consistent results can reveal assumptions worth changing. Quantity calculation and broker execution eligibility must still be evaluated separately.
+
 ## Test inventory context
 
 Trader Joe's Agent currently contains **29 private Python test modules**. These tests have been developed and exercised throughout the project's evolution. Many have been rerun following changes to the application, with passing results observed during multiple earlier development stages. Following substantial changes to the application, a complete regression run against the current version remains pending.

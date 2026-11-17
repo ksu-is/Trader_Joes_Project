@@ -166,6 +166,20 @@ The project has developed through research, discussion, engineering tradeoffs, a
 
 **Why.** Supporting more strategies is not automatically beneficial before corresponding safeguards and verification exist. Deferring a feature can be a deliberate engineering decision rather than an omission.
 
+## Decision 13 — Require verified startup readiness before active operation (proposed)
+
+**Status:** Proposed architectural enhancement; **not yet implemented or tested**. **Evidence:** Developer-confirmed design discussion, November 17, 2026.
+
+**Problem.** Passing historical regression tests or starting the application does not prove that its current configuration, persisted state, dependencies, and required services are ready for a supervised active session. The developer wants the application to establish operational integrity *before* it is allowed to become active.
+
+**Chosen direction to implement and evaluate.** Introduce a mandatory, non-destructive startup integrity gate. Begin unarmed, check essential local and mode-specific external prerequisites, report pass/fail/unavailable/uncertain results, and block activation on any critical failure or ambiguity. A successful check only establishes eligibility for **separate explicit operator authorization**; it never grants execution authority by itself.
+
+**Contrasting approach.** Run the entire regression suite on every startup, including mock-based failure-injection tests, or treat an earlier all-green test run as sufficient current readiness evidence.
+
+**Why.** Regression tests are valuable for development, but some intentionally simulate harmful conditions and should not touch operational state. Startup checks should instead inspect the real operating environment safely. Readiness evidence becomes stale after relevant state or configuration changes, so validation must be scoped and invalidated appropriately. Continuous runtime protections remain essential.
+
+**Evidence needed to adopt.** Implement and test the gate in the private application; demonstrate non-destructive checks, fail-closed outcomes, stale-result handling, no automatic arming, and compatibility with existing authorization and reconciliation protections. Until then, this is a documented proposal, not a current safety guarantee.
+
 ## How we treat partial historical conversations
 
 Early conversations are being reviewed as selected excerpts, **not complete transcripts**. An omitted response or unfinished pasted code block is not evidence that the actual application was broken or that a feature was never implemented. The log distinguishes what the discussion establishes, what the developer confirms, and what the private Git/code review verifies. Implementation dates are not inferred from an early proposal alone.

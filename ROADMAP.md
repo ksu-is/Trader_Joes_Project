@@ -25,6 +25,7 @@ This roadmap shows **where the project stands, what we will verify next, and wha
 | Market analysis and candidate discovery | ✅ Implemented; broader validation outstanding | Test representative data and analysis edge cases |
 | Portfolio-aware sizing and risk controls | ✅ Implemented; 🧪 verification ongoing | Confirm expected outcomes across realistic and abnormal inputs |
 | Deliberate operator authorization | ✅ Implemented; 🧪 selected tests passed historically | Include in current regression baseline |
+| Mandatory startup integrity gate | ⬜ Proposed; not yet implemented | Define non-destructive preflight, failure behavior, and eligibility checks |
 | Persistence, duplicate guards, recovery | ✅ Implemented; 🧪 selected tests passed historically | Test additional interrupted and failed-write cases |
 | Webull account / portfolio connectivity | ✅ Implemented integration work | Distinguish connectivity from order-lifecycle validation |
 | Controlled Webull paper workflows | 🧪 Integration developed; lifecycle validation incomplete | Capture real paper-environment observations |
@@ -78,8 +79,23 @@ These are the **highest-priority technical items**, in suggested sequence. Use t
 - [ ] **T4 — Persistence and audit failure injection:** Exercise selected interrupted writes, state recovery, and journal-write failures without real broker submission.
 - [ ] **T5 — Paper integration evidence:** After offline checks, conduct deliberately authorized, controlled paper scenarios and document actual acknowledgement, recorded state, restart/reconciliation behavior, and unresolved outcomes.
 - [ ] **T6 — Repeatability:** Repeat critical paper checks across sessions and record whether results agree.
+- [ ] **T7 — Startup integrity gate design and verification (proposed):** After establishing the current regression baseline, define and implement non-destructive startup checks that must pass before a session is eligible for explicit authorization. Verify failed, unavailable, stale, and inconsistent outcomes block execution; verify that passing checks never auto-arm the agent. Record current-runtime evidence separately from full regression results.
 
 **Completion rule:** A box is checked only once its described result is actually recorded. A passing mock test is not a paper-broker result; a paper-broker result is not live-money readiness.
+
+## Proposed startup integrity gate — design and acceptance criteria
+
+**Status: Proposed, not implemented or validated.** The intent is to establish verified operational readiness before an already supervised session can become eligible for activation. This is not a guarantee of perfect operation and does not replace ongoing runtime safeguards.
+
+- Startup must begin without execution authority. A completed preflight must **never automatically arm** the application.
+- Preflight should verify required configuration and dependencies, usable storage and audit facilities, coherent persisted state, unresolved-operation status, and required read-only external readiness, as appropriate to the selected mode.
+- Checks must be non-destructive or isolated. No orders, live-account modifications, or fault-injection tests against operational state may occur during routine startup.
+- Critical failures, unavailable required checks, and ambiguous outcomes must block execution. Safe observation may remain possible only where its own prerequisites hold.
+- A passing result must be scoped to the current process/configuration/state and invalidated after restart or material changes before authorization; continuous runtime guards still apply afterward.
+- Validation should exercise both passing and intentionally failing preflight scenarios, including confirmation that execution stays blocked and that an earlier PASS cannot be reused incorrectly.
+- The full regression suite remains an **offline development/release check**, not a destructive test workload run on every ordinary startup.
+
+**Completion evidence:** Document a reviewed checklist, test results for allow/block scenarios, preservation of manual authorization, and a verified startup report showing outcomes without exposing sensitive operational data.
 
 ## 4. Controlled paper-validation checkpoints
 

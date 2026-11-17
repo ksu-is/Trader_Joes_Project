@@ -5,7 +5,7 @@
 **Maintainer:** Solo student developer  
 **Public repository role:** Progress, milestones, scoped test evidence, research, and coursework documentation — **not** a mirror of the private engine
 
-> **How to read this roadmap:** `[x]` means the stated milestone has evidence of completion; `[ ]` means it is unfinished, unverified, or still planned. A feature being **implemented** is different from being **offline tested**, **paper validated**, or **production-ready**. Dates for future sprints are illustrative until confirmed against the course calendar.
+> **How to read this roadmap:** **Completed** = checked box. **Not completed yet** = empty box. A feature being **implemented** is different from being **offline tested**, **paper validated**, or **production-ready**. Dates for future sprints are illustrative until confirmed against the course calendar.
 
 ## Project objectives
 

@@ -11,7 +11,9 @@
 | Selected private suites reported passing | **3** | Reconciliation, execution permissions, and cross-operation guard suites |
 | Known corrected control-flow issue | **1** | Fix committed; direct caller-level regression still planned |
 
-**Important:** 29 is a **module count**, not an individual test-case count, full pass count, or percentage of coverage. The 3 reported passing suites are a subset, not a complete inventory.
+**Historical testing context:** Trader Joe's Agent currently contains **29 private Python test modules**. These tests have been developed and exercised throughout the project's evolution, with passing results observed during earlier development stages. Following substantial changes to the application, a **complete regression run against the current version remains pending**.
+
+The 29 figure is a **module count**, not an individual case count, current pass count, or coverage percentage. Three selected suites have been reported passing more recently; the full current suite has not been verified. Earlier passing results remain useful historical evidence.
 
 ## Selected public-facing regression categories
 
@@ -51,4 +53,4 @@ An independently authored public CSV exercise previously produced **6/6 passing 
 - [ ] Gather repeatable supervised paper-integration evidence
 - [ ] Record dated results, environments, and outcome totals for future runs
 
-**Reporting principle:** A test file's existence is not a pass, and mock success is not live integration success. See [Risk Management & Safety](docs/RISK_AND_SAFETY.md).
+**Reporting principle:** A test file's existence is not a current pass, and mock success is not live integration success. See [Engineering Achievements](ENGINEERING_ACHIEVEMENTS.md) and [Risk Management & Safety](docs/RISK_AND_SAFETY.md).

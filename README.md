@@ -47,7 +47,7 @@ The risk-management work covers broad concerns applicable to trading software, i
 
 ## Quality assurance and regression testing
 
-The **29-module count** reflects files found in the private repository, not a verified total of individual regression cases. This is distinct from the **three specific private suites reported passing** in local testing. Full private-suite results have not been established for this portfolio snapshot.
+Trader Joe's Agent currently contains **29 private Python test modules**. These tests have been developed and exercised throughout the project's evolution, with passing results observed during earlier development stages. Following substantial changes to the application, a **complete regression run against the current version remains pending**. Three selected private suites were more recently reported passing locally; the module count is not a pass count.
 
 Selected, broadly applicable test categories are:
 
@@ -72,7 +72,19 @@ These are **test themes**, not a claim that each entire category passed in every
 | **November 16, 2026 (Eastern)** | Test-harness refinements and a reconciliation control-flow correction |
 | **Next** | Dedicated regression coverage, continued failure injection, and supervised paper verification |
 
-[Full Git-backed development history](DEVELOPMENT_HISTORY.md) · [Engineering changelog](CHANGELOG.md)
+[Full Git-backed development history](DEVELOPMENT_HISTORY.md) · [Engineering achievements](ENGINEERING_ACHIEVEMENTS.md) · [Engineering changelog](CHANGELOG.md)
+
+## Engineering achievements: challenges and solutions
+
+The development history is more than a list of features. Several milestones addressed difficult questions about safe operation, interruptions, and testing an evolving application:
+
+- **October 20 — Safer startup:** Introduced deliberate operator authorization and a non-executing observation mode so a fresh launch does not itself imply permission to act.
+- **October 26 — Persistence and recovery:** Strengthened state preservation, duplicate-operation protection, and tests for uncertain outcomes across interruptions and separate processes.
+- **November 16 — Defect correction and test maintenance:** Corrected a reconciliation control-flow issue and updated regression harnesses to better reflect current safety expectations.
+
+The October 26 commit recorded passing simulated recovery tests *at that time*. A complete rerun against the latest application state is still needed.
+
+[Read the engineering case studies](ENGINEERING_ACHIEVEMENTS.md) for the challenge, change, engineering lesson, and evidence behind each milestone.
 
 ## Future visual companion: the Chimp Office
 
@@ -98,6 +110,8 @@ The **Chimp Office** is an optional Phaser 4 concept meant to make Trader Joe's 
 | --- | --- |
 | [Development Status](DEVELOPMENT_STATUS.md) | Capability-level maturity and remaining verification |
 | [Development History](DEVELOPMENT_HISTORY.md) | Dated milestones derived from private Git evidence |
+| [Engineering Achievements](ENGINEERING_ACHIEVEMENTS.md) | Detailed challenge–solution case studies drawn from recorded development |
+| [Sprint 1 Retrospective](SPRINT_1_RETROSPECTIVE.md) | Working reflection on decisions, challenges, lessons, and next sprint |
 | [Test Results](TEST_RESULTS.md) | Test-module count, scoped results, and gaps |
 | [Market Analysis & Indicators](docs/MARKET_ANALYSIS.md) | High-level technical explanation of analytical tools |
 | [Risk Management & Safety](docs/RISK_AND_SAFETY.md) | Safeguards, uncertainty, and reliability principles |

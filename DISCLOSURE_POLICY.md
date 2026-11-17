@@ -1,6 +1,6 @@
 # Public Disclosure Policy
 
-This repository tracks the **development of the real Trader Joe's Agent** without publishing its proprietary implementation. Each new public entry is reviewed on its own merits, and entries are also reviewed together because individually harmless details can reveal architecture in combination.
+This repository documents the **development of the real Trader Joe's Agent** while the operational application and sensitive records remain in a separate, private development environment. The primary reason is **security and responsible handling of financial information**: the project connects to brokerage services and must protect API credentials, authentication keys, account information, transaction records, logs, and operational configuration. Keeping the working source separate also helps preserve a controlled development and testing environment and protects original project work. Public updates are reviewed individually and together to prevent accidental exposure of sensitive details.
 
 ## Disclosure levels
 
@@ -8,7 +8,7 @@ This repository tracks the **development of the real Trader Joe's Agent** withou
 | --- | --- | --- |
 | Public | Capability names, broad goals, dated milestones, verified result summaries, original educational examples | "Market discovery component implemented" |
 | Review first | Individual internal filenames, selected sanitized screenshots, test names, integration provider names, examples of resolved defects | A reviewed filename and a one-sentence purpose |
-| Private | Real source code, execution sequence, API credentials, operational data, internal call graphs, thresholds, timings, rankings, supported asset universe, detailed broker payloads, raw state and logs | Scanner configuration, trading rules, broker-specific failure responses |
+| Restricted / internal | Operational source and configuration, API credentials, authentication material, account and transaction data, raw logs, and sensitive implementation details | Local account records, credentials, brokerage responses, operational logs |
 
 A filename is **not** automatically safe just because it is short. Filenames and descriptions are reviewed case by case. The public tracker generally uses capability labels instead of internal paths.
 
@@ -22,7 +22,7 @@ Before any commit or screenshot is published:
 4. Avoid source snippets, exact algorithms, thresholds, scanner cadence/universe, performance figures, detailed error paths, and architecture diagrams from the private application.
 5. Review all files and previous public entries **together** for combined disclosure.
 6. Mark unverified claims as **pending**, rather than inventing test evidence.
-7. Ensure an educational example is clearly labeled independently written or adapted, never presented as the proprietary engine.
+7. Ensure an educational example is clearly labeled independently written or adapted, never presented as the operational application.
 8. Obtain explicit owner approval before publishing **any** private implementation code.
 
 ## Acceptable status words

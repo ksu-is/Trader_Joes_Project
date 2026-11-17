@@ -1,7 +1,7 @@
 # Trader Joe's Agent
 ### Engineering Development Portfolio | Python Trading-Agent Project
 
-**A public record of a privately developed trading agent: what has been built, how it is being tested, and what comes next.**
+**A public engineering record of Trader Joe's Agent: what has been built, how it is being tested, and what comes next.**
 
 Trader Joe's Agent is an ongoing Python software engineering project that combines market analysis, candidate discovery, supervised operation, operational safeguards, and reliability testing. This repository is its **coursework-facing development portfolio**, not the operational trading engine.
 
@@ -132,10 +132,10 @@ The repository also currently contains a separate offline CSV example in `demo/`
 
 A later course presentation is planned around a local **non-executing, sanitized demonstration of the actual private agent**. Whether private source review or other deliverables are required must be confirmed with the instructor.
 
-This public repository belongs to the `ksu-is` organization. The operational application, private source, strategies, detailed configurations, credentials, logs, and proprietary architecture are **not published here**. No open-source license has yet been chosen; course licensing requirements remain to be confirmed.
+This public repository belongs to the `ksu-is` organization. The working application remains in a separate private environment **primarily to protect brokerage credentials, authentication material, financial account information, transaction records, logs, and sensitive operational configuration**. Separating it from the public portfolio also supports controlled development and protects original project work. No open-source license has yet been chosen; course licensing requirements remain to be confirmed.
 
 Every proposed disclosure is subject to [Disclosure Policy](DISCLOSURE_POLICY.md). Nothing here is investment advice or a claim of trading performance.
 
 ---
 
-*Trader Joe's Agent — meaningful development evidence, without publishing the proprietary implementation.*
+*Trader Joe's Agent — open engineering progress, with sensitive operational information kept secure.*

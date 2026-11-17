@@ -1,6 +1,6 @@
 # Engineering Milestones
 
-This log provides a public, high-level history of the **actual private Trader Joe's Agent** and the separate coursework presentation. It does not expose private source, implementation details, operational data, or strategy parameters.
+This log records engineering changes to the **actual Trader Joe's Agent** for the coursework portfolio. It focuses on development evidence and observed outcomes, while operational files and sensitive financial information remain in the private development environment.
 
 ## November 16, 2026 — Reconciliation correction and verification
 
@@ -24,7 +24,7 @@ The coursework repository documents capabilities, tests, and milestones without 
 
 **Status:** Multiple features implemented; validation ongoing.
 
-Work includes market-data processing, candidate analysis, safety checks, operator involvement, paper-integration support, persistent state, recovery-oriented testing, and journaling. These entries are intentionally broad; detailed implementation remains private.
+Work includes market-data processing, candidate analysis, safety checks, operator involvement, paper-integration support, persistent state, recovery-oriented testing, and journaling. Further details are available in the linked engineering and testing documentation.
 
 ## Next entries
 

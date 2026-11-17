@@ -47,7 +47,7 @@ This grouping is an editorial summary of the work visible in version control, **
 - **Version control makes progress auditable.** The history shows multiple phases of implementation and subsequent correction.
 - **Tests themselves need maintenance.** Earlier test harnesses were updated when application safety expectations became stricter.
 - **Fail-safe behavior deserves regression coverage.** A reviewed control-flow defect motivated a correction and further targeted testing.
-- **Documentation and privacy can coexist.** This public history tracks accomplishments without exposing how proprietary components are implemented.
+- **Documentation and security can coexist.** This public history tracks accomplishments while keeping sensitive operational details and financial information out of the public repository.
 
 ## Next updates
 

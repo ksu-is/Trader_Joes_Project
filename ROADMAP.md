@@ -24,12 +24,20 @@ Develop, test, and document a reliable Python application for analyzing financia
 
 ### Week 2 — Testing, review, and documentation
 
-- [ ] Document the existing test categories without publishing private source code
+- [x] Document the existing test categories without publishing private source code
 - [ ] Validate persistence-failure handling using isolated test data
 - [ ] Check consistency between planned values and recorded outcomes
 - [ ] Review error handling and audit logging
-- [ ] Record observed test results, outstanding bugs, and limitations
+- [x] Record currently reported test results, outstanding bugs, and limitations
 - [ ] Write a sprint retrospective and define the next two-week goals
+
+## Public reporting requirements
+
+- [x] Create a development status tracker
+- [x] Add sanitized test evidence and a changelog
+- [x] Establish a case-by-case publication policy
+- [ ] Confirm how the instructor will review the private implementation
+- [ ] Update tracker entries after each new verified test milestone
 
 ## Longer-term milestones
 

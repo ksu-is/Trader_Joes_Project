@@ -24,6 +24,16 @@ Trader Joe's Agent is a Python software project focused on financial-market anal
 - [ ] Verify the open-source-license requirement with the instructor before choosing a license
 - [ ] Submit the D2L progress review before its deadline
 
+## Current public reporting
+
+- [x] Establish capability-level development status tracking
+- [x] Publish scoped testing evidence and known limitations
+- [x] Document a resolved control-flow issue without disclosing its implementation
+- [x] Establish a disclosure-review policy for future publication
+- [ ] Confirm the professor accepts private source demonstration with public progress documentation
+
+See [development status](DEVELOPMENT_STATUS.md), [test evidence](TEST_RESULTS.md), and the [changelog](CHANGELOG.md).
+
 ## Next engineering steps
 
 - [ ] Continue persistence and crash-recovery tests

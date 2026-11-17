@@ -8,19 +8,37 @@
 
 The early project work has concentrated on establishing an ambitious Python trading-agent application while prioritizing controlled operation, testability, and engineering evidence. In parallel, a public development portfolio has been created so coursework progress can be reviewed without requiring the operational application to be published.
 
+## How the design evolved
+
+The project did not develop in a straight line. Research into other trading projects, public repositories, documentation, and community discussions encouraged comparison of different approaches, **without copying external code**. Many architectural discussions began with hypothetical failures: what if the program crashes, a broker response is uncertain, recorded state disagrees with external state, or a safety result is interpreted incorrectly? Considering those possibilities led to additional safeguards and testing priorities.
+
+A particularly deliberate tradeoff was continuing to use Alpaca's accessible free IEX data instead of immediately paying for a more comprehensive feed. The reason was to **prove that data handling, operational state, recovery, and controlled behavior are dependable before purchasing more expensive inputs**. A paid feed may make sense later, but it would not cure unreliable application behavior today.
+
+The developer also reports the application is connected to a real Webull portfolio. Live account connectivity, controlled paper-order integration, and live-money execution are separate capabilities. The first should not be mistaken for proof that the last has been enabled or validated.
+
+**Related:** [Decision Log](DECISION_LOG.md) · [Research](RESEARCH.md)
+
 ## What has been accomplished
 
 - Developed and committed the foundational market-analysis and candidate-review components, with subsequent expansion of safety controls and account-related validation.
 - Added supervised startup behavior to distinguish observation from sessions deliberately authorized for controlled paper testing.
 - Strengthened state persistence, recovery considerations, and protection against repeated or conflicting activity after uncertain outcomes.
 - Built a private regression-testing inventory that currently contains **29 Python test modules**.
-- Recorded passing results during earlier development stages, including the October 26 recovery-focused tests using simulated responses and isolated state; three selected suites were subsequently reported passing locally after test-harness maintenance.
+- Repeatedly exercised many private regression tests after application changes, with passing results at multiple earlier stages. The October 26 recovery-focused tests were recorded as passing using simulated responses and isolated state; three selected suites were subsequently reported passing locally after test-harness maintenance.
 - Corrected a reconciliation control-flow defect and improved isolation of tests from operational state.
 - Established the `ksu-is` public coursework portfolio with a README, roadmap, technical overviews, milestones, evidence logs, and an optional Phaser 4 Chimp Office concept.
 
 These achievements span the project's recorded development history. **Not all of them necessarily occurred inside the instructor's official Sprint 1 dates.** The final submission should distinguish historical context from work completed during the assigned reporting period.
 
 ## Challenges encountered and how the approach changed
+
+### Research-driven architecture and repeated what-if analysis
+
+**Challenge:** The application grew beyond its initial expected workflow. Examining other projects and repeatedly discussing what could go wrong exposed design questions that could not be answered by adding another trading feature.
+
+**Response:** Compared approaches, considered their limitations, and revisited earlier design assumptions as operational and failure-handling work expanded. The resulting architecture became more conservative through iteration rather than a single predefined design.
+
+**Lesson:** Research is most useful when it improves the questions asked of the design, not when it merely provides features to imitate.
 
 ### 1. Ensuring software cannot act solely because it started
 
@@ -67,7 +85,7 @@ These achievements span the project's recorded development history. **Not all of
 - A complete rerun of all **29 current private test modules** has not been recorded against the latest version. Earlier passing results are historical, not a current 100% pass claim.
 - The dedicated direct caller-level reconciliation regression is not yet marked complete.
 - Additional persistence-failure, logging-failure, and realistic paper-integration validation remain open.
-- The related open-source project's hands-on evaluation, course licensing decision, and final instructor submission requirements need confirmation.
+- The related open-source project's hands-on evaluation, documentation of additional source links, course licensing decision, and final instructor submission requirements need confirmation.
 - The Chimp Office is an optional visual concept with initial Phaser setup, not a completed interface.
 
 ## Priorities for the next sprint
@@ -87,5 +105,7 @@ These achievements span the project's recorded development history. **Not all of
 - [ ] Is the Teams project entry confirmed, and has the required D2L review been completed?
 - [ ] Has the open-source reference been cloned/evaluated, and what is the license requirement?
 - [ ] What level of private-code demonstration or instructor access is required?
+
+**Decision history:** [Engineering Decision Log](DECISION_LOG.md) · [Research](RESEARCH.md)
 
 **Related:** [Sprint 1 Progress](SPRINT_1.md) · [Engineering Achievements](ENGINEERING_ACHIEVEMENTS.md) · [Test Results](TEST_RESULTS.md) · [Roadmap](ROADMAP.md)

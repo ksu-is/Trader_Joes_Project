@@ -47,7 +47,7 @@ The risk-management work covers broad concerns applicable to trading software, i
 
 ## Quality assurance and regression testing
 
-Trader Joe's Agent currently contains **29 private Python test modules**. These tests have been developed and exercised throughout the project's evolution, with passing results observed during earlier development stages. Following substantial changes to the application, a **complete regression run against the current version remains pending**. Three selected private suites were more recently reported passing locally; the module count is not a pass count.
+Trader Joe's Agent currently contains **29 private Python test modules**. These tests have been developed and exercised throughout the project's evolution, with passing results observed during earlier development stages. Many of these tests have been run repeatedly after changes to the application, with passing results observed across earlier stages. Following substantial changes to the application, a **complete recorded regression run against the current version remains pending**. Three selected private suites were more recently reported passing locally; the module count is not a pass count.
 
 Selected, broadly applicable test categories are:
 
@@ -84,7 +84,7 @@ The development history is more than a list of features. Several milestones addr
 
 The October 26 commit recorded passing simulated recovery tests *at that time*. A complete rerun against the latest application state is still needed.
 
-[Read the engineering case studies](ENGINEERING_ACHIEVEMENTS.md) for the challenge, change, engineering lesson, and evidence behind each milestone.
+[Read the engineering case studies](ENGINEERING_ACHIEVEMENTS.md) for the challenge, change, engineering lesson, and evidence behind each milestone. The [Engineering Decision Log](DECISION_LOG.md) explains important alternatives, tradeoffs, and why certain upgrades were postponed.
 
 ## Future visual companion: the Chimp Office
 
@@ -111,6 +111,7 @@ The **Chimp Office** is an optional Phaser 4 concept meant to make Trader Joe's 
 | [Development Status](DEVELOPMENT_STATUS.md) | Capability-level maturity and remaining verification |
 | [Development History](DEVELOPMENT_HISTORY.md) | Dated milestones derived from private Git evidence |
 | [Engineering Achievements](ENGINEERING_ACHIEVEMENTS.md) | Detailed challenge–solution case studies drawn from recorded development |
+| [Engineering Decision Log](DECISION_LOG.md) | Why approaches were chosen, deferred, or reconsidered |
 | [Sprint 1 Retrospective](SPRINT_1_RETROSPECTIVE.md) | Working reflection on decisions, challenges, lessons, and next sprint |
 | [Test Results](TEST_RESULTS.md) | Test-module count, scoped results, and gaps |
 | [Market Analysis & Indicators](docs/MARKET_ANALYSIS.md) | High-level technical explanation of analytical tools |
@@ -118,7 +119,7 @@ The **Chimp Office** is an optional Phaser 4 concept meant to make Trader Joe's 
 | [Chimp Office Concept](docs/CHIMP_OFFICE_CONCEPT.md) | Animated workplace vision, personalities, and proposed Phaser 4 milestones |
 | [Changelog](CHANGELOG.md) | Engineering corrections and progress |
 | [Roadmap](ROADMAP.md) | Completed work, sprint objectives, and future work |
-| [Research](RESEARCH.md) | Related open-source reference evaluation |
+| [Research](RESEARCH.md) | Comparative research, reference projects, and ideas evaluated without copying implementation code |
 | [Disclosure Policy](DISCLOSURE_POLICY.md) | Case-by-case publication review |
 
 ## Public educational materials

@@ -77,7 +77,7 @@ Trader Joe's Agent has grown through more than feature additions. Significant wo
 
 ## Test inventory context
 
-Trader Joe's Agent currently contains **29 private Python test modules**. These tests have been developed and exercised throughout the project's evolution, with passing results observed during earlier development stages. Following substantial changes to the application, a complete regression run against the current version remains pending.
+Trader Joe's Agent currently contains **29 private Python test modules**. These tests have been developed and exercised throughout the project's evolution. Many have been rerun following changes to the application, with passing results observed during multiple earlier development stages. Following substantial changes to the application, a complete regression run against the current version remains pending.
 
 The count refers to modules, **not** 29 passing test suites or a measured percentage of test coverage. See [Test Results](TEST_RESULTS.md) for the latest documented scope.
 
@@ -88,5 +88,7 @@ The count refers to modules, **not** 29 passing test suites or a measured percen
 - Continue isolated persistence, interruption, and audit-write failure testing.
 - Gather controlled paper-environment results before claiming end-to-end reliability.
 - Revisit paid data options only when reliability, needs, and cost justify the upgrade.
+
+**Engineering reasoning:** The [Decision Log](DECISION_LOG.md) explains alternatives considered, why conservative behavior became a priority, and why richer data remains deferred.
 
 **Related:** [Development History](DEVELOPMENT_HISTORY.md) · [Roadmap](ROADMAP.md) · [Risk & Safety](docs/RISK_AND_SAFETY.md) · [Sprint 1 retrospective](SPRINT_1_RETROSPECTIVE.md)

@@ -11,7 +11,7 @@
 | Selected private suites reported passing | **3** | Reconciliation, execution permissions, and cross-operation guard suites |
 | Known corrected control-flow issue | **1** | Fix committed; direct caller-level regression still planned |
 
-**Historical testing context:** Trader Joe's Agent currently contains **29 private Python test modules**. These tests have been developed and exercised throughout the project's evolution, with passing results observed during earlier development stages. Following substantial changes to the application, a **complete regression run against the current version remains pending**.
+**Historical testing context:** Trader Joe's Agent currently contains **29 private Python test modules**. These tests have been developed and exercised throughout the project's evolution. Many have been run repeatedly after application changes, with passing results observed at multiple earlier stages. Following substantial changes to the application, a **complete regression run against the current version remains pending**.
 
 The 29 figure is a **module count**, not an individual case count, current pass count, or coverage percentage. Three selected suites have been reported passing more recently; the full current suite has not been verified. Earlier passing results remain useful historical evidence.
 

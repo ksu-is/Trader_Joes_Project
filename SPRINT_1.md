@@ -32,6 +32,8 @@ Trader Joe's Agent is a Python software project focused on financial-market anal
 - [x] Establish a disclosure-review policy for future publication
 - [ ] Confirm the professor accepts private source demonstration with public progress documentation
 
+See the [Decision Log](DECISION_LOG.md) for tradeoffs and the [Research](RESEARCH.md) page for comparative design evaluation.
+
 See [development status](DEVELOPMENT_STATUS.md), [test evidence](TEST_RESULTS.md), the [engineering achievements](ENGINEERING_ACHIEVEMENTS.md), and the [changelog](CHANGELOG.md).
 
 A separate [Sprint 1 Retrospective](SPRINT_1_RETROSPECTIVE.md) is available as a **working draft** for reflection on accomplishments, changes of direction, lessons learned, and the next sprint. Official sprint dates and submission requirements still need confirmation.

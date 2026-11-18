@@ -1,6 +1,6 @@
 # Engineering Achievements — Trader Joe's Agent
 
-**Development evidence reviewed:** October 7–November 16, 2026 (Eastern time)  
+**Development evidence reviewed:** October 7–November 17, 2026 (Eastern time)
 **Purpose:** Explain the engineering challenges encountered, the changes made, and the evidence supporting those changes.
 
 Trader Joe's Agent has grown through more than feature additions. Significant work has focused on making an automated application behave predictably when permissions, external responses, or persisted information are uncertain. These case studies are based on the private project's recorded Git history and reported test outcomes. They describe software-engineering accomplishments, not trading results.
@@ -91,19 +91,31 @@ Trader Joe's Agent has grown through more than feature additions. Significant wo
 
 **Lesson.** Unexpected but mathematically consistent results can reveal assumptions worth changing. Quantity calculation and broker execution eligibility must still be evaluated separately.
 
-## Test inventory context
+## Achievement 09 — Expanding and isolating scenario regression coverage
 
-Trader Joe's Agent currently contains **29 private Python test modules**. These tests have been developed and exercised throughout the project's evolution. Many have been rerun following changes to the application, with passing results observed during multiple earlier development stages. Following substantial changes to the application, a complete regression run against the current version remains pending.
+**Development milestone:** November 17, 2026
 
-The count refers to modules, **not** 29 passing test suites or a measured percentage of test coverage. See [Test Results](TEST_RESULTS.md) for the latest documented scope.
+**Challenge.** Historical scenario tests included interactive approval, state-file deletion and restoration, direct journal writes, and outdated expectations. Simply running every `test_*.py` file would risk side effects and accidental external broker activity.
 
-## What comes next
+**What changed.** Six valuable scenario scripts were refactored for repeatable offline execution using mocked inputs, fake broker interactions, and isolated temporary storage. Existing protections were preserved: when a recovery fixture initially lacked an order-state file, the system blocked as designed. The test fixture was corrected rather than reducing the production check.
 
-- Complete and record the full private regression run against the latest application state.
-- Add a dedicated test protecting the corrected reconciliation calling path.
-- Continue isolated persistence, interruption, and audit-write failure testing.
-- Gather controlled paper-environment results before claiming end-to-end reliability.
-- Revisit paid data options only when reliability, needs, and cost justify the upgrade.
+**Evidence and status.** All six revised offline scripts subsequently reported passing locally. The four actual paper-broker integration scripts remained excluded from automated offline testing.
+
+## Achievement 10 — Creating a repeatable, evidence-producing regression runner
+
+**Development milestone:** November 17, 2026
+
+**Challenge.** Earlier batch reporting sometimes omitted results, and scripts could print failure text even while exiting successfully. Ad hoc runs made evidence difficult to reproduce.
+
+**What changed.** A permanent Python runner now uses a defined 25-script offline allowlist, runs each script in a subprocess, checks exit codes and success markers, flags explicit failures, imposes timeouts, and saves timestamped individual logs plus CSV/JSON summaries with Git revision metadata.
+
+**Evidence and status.** At private revision `53c30cf3ebc796194b629290b4634c3456052853`, the developer reported a complete runner result of **25/25 passing scripts, zero failures, and exit code 0**. This is developer-local offline evidence; it is not CI verification or real broker execution.
+
+## Current test inventory and next steps
+
+**29 private Python test modules** are currently inventoried: **25 included in the successful offline Baseline 4 run**, with **four real paper-broker integration scripts deliberately kept separate**. Counts refer to scripts, not individual test cases or measured code coverage.
+
+Next priorities are maintaining the offline regression baseline, adding direct caller-level reconciliation regression coverage, implementing a **separate fail-closed startup integrity check**, and recording a first controlled real paper-order submission with acknowledgment and reconciliation. Actual submission to Webull paper has **not** yet been demonstrated by this baseline.
 
 **Engineering reasoning:** The [Decision Log](DECISION_LOG.md) explains alternatives considered, why conservative behavior became a priority, and why richer data remains deferred.
 

@@ -1,56 +1,55 @@
 # Trader Joe's Agent — Testing and Regression Evidence
 
-**Snapshot:** November 16, 2026 (Eastern time)
-**Evidence:** Private Git tree/file inspection and developer-reported local test runs. No full-suite CI result is claimed.
+**Snapshot:** November 17, 2026 (Eastern time)
+**Evidence:** Developer-supplied local terminal output and summary counts from the private offline runner; private source review. These results were not executed by the public repository's CI.
 
-## Test inventory
+## Baseline 4 — Complete approved offline allowlist
 
-| Metric | Count | What this means |
-| --- | ---: | --- |
-| Private Python test modules | **29** | Files following the `test_*.py` naming convention on private `main` at review time |
-| Selected private suites reported passing | **3** | Reconciliation, execution permissions, and cross-operation guard suites |
-| Known corrected control-flow issue | **1** | Fix committed; direct caller-level regression still planned |
+| Measure | Observed result |
+| --- | --- |
+| Approved offline regression scripts selected | **25** |
+| Passed | **25** |
+| Failed | **0** |
+| Runner exit code | **0** |
+| Private Git revision tested | `53c30cf3ebc796194b629290b4634c3456052853` |
+| Local run date | November 17, 2026 (Eastern) |
+| Evidence captured | Per-script logs, summary CSV, summary JSON, Git branch/revision metadata |
+| Real paper-broker integration scripts excluded | **4** |
 
-**Historical testing context:** Trader Joe's Agent currently contains **29 private Python test modules**. These tests have been developed and exercised throughout the project's evolution. Many have been run repeatedly after application changes, with passing results observed at multiple earlier stages. Following substantial changes to the application, a **complete regression run against the current version remains pending**.
+The developer ran the complete 25-script allowlist together using a new permanent runner. It checks subprocess exit codes and expected success markers, flags explicit failure output, applies per-script timeouts, and creates timestamped reports. The developer's terminal output showed **25/25 PASS** with a final exit code of **0**.
 
-The 29 figure is a **module count**, not an individual case count, current pass count, or coverage percentage. Three selected suites have been reported passing more recently; the full current suite has not been verified. Earlier passing results remain useful historical evidence.
+**Interpretation:** This demonstrates successful execution of the *selected offline tests at the recorded revision*. It is not a coverage percentage, independent CI certification, proof of real broker submissions, or a claim that every possible scenario was checked.
 
-## Selected public-facing regression categories
+## Engineering changes behind this result
 
-These are ordinary quality-assurance concerns for trading software. They correspond to areas represented in the private test modules, but this table **does not assert that every test in each category has passed**.
+- Two older tests were adjusted to match the current execution-permission interface and protected order-state transitions; test assertions now fail appropriately when expected outcomes do not occur.
+- Six additional scenario-focused scripts were adapted for the offline suite: authorization input, fill handling, order journaling, order-lifecycle persistence, mock paper submission guards, and acknowledgment/persistence checks.
+- Test state was redirected to temporary files and databases where appropriate, rather than modifying normal operational state.
+- A missing temporary order-state file initially caused a restart-recovery scenario to fail. The test fixture was corrected to initialize the *temporary* order ledger while keeping production's missing-state fail-closed behavior unchanged; the rerun passed.
+- Four real Webull paper-environment scripts stay outside the offline runner and require separate controlled execution.
 
-| Test theme | Purpose | Public disclosure |
-| --- | --- | --- |
-| **Risk checks** | Detect proposed activity outside defined safeguards | General test purpose only |
-| **Operator authorization** | Verify permission is required when applicable | General test purpose only |
-| **Duplicate/conflicting actions** | Check that repeated requests do not silently produce unintended extra activity | General test purpose only |
-| **State persistence** | Check survival and consistency of necessary state across interruptions | General test purpose only |
-| **Failure and ambiguous outcomes** | Exercise conservative responses to errors or unknown outcomes | General test purpose only |
-| **Activity records** | Verify relevant events can be recorded and reviewed | General test purpose only |
+## Scope of the 25 approved offline scripts
 
-This report summarizes test categories and evidence rather than reproducing test implementations.
+The suite exercises safety gates, simulated broker interactions, order identity, allowed and blocked transitions, duplicate prevention, uncertain acknowledgments, timeouts, persistence, reconciliation, selected restart behavior, journal integrity, fill handling, and operator authorization. Some scripts cover multiple scenarios; **25 counts scripts, not individual cases**.
 
-## Reported private local results
+One recovery script validates persisted lifecycle changes within the test process; a separate regression exercises recovery across a fresh Python process. These are distinct kinds of evidence.
 
-| Area | Reported result | Scope and limitation |
-| --- | --- | --- |
-| Reconciliation regression suite | Passing after test-harness isolation | Offline tests; direct main-caller regression still needed |
-| Execution-permission suite | Passing after updating runtime-flag test expectations | Simulated decision inputs, not live execution |
-| Cross-operation submission guard | Passing | Simulated broker interactions, not proof of real broker behavior |
-| Reconciliation control-flow correction | Corrected and committed; syntax check passed | Dedicated caller-level scenario test remains pending |
+## Real paper integration remains pending
 
-The phrase **reported passing** means the developer confirmed a local result, not that this public repository independently executed the private tests.
+Developer-reported paper-environment testing has reached **pre-submission** behavior, but no actual Webull paper-order submission and broker-confirmed acknowledgment were established by this Baseline 4 run. Real-broker order lookup, submission, cancellation, and end-to-end reconciliation remain separate integration work. The mandatory startup integrity gate is also planned, not implemented or verified as part of this result.
 
-## Historical supplemental exercise
+## Remaining verification goals
 
-An independently authored public CSV exercise previously produced **6/6 passing unit tests** in the developer's local Windows environment. It is **not** an operational trading-agent test or a substitute for the private regression suite. Its result is preserved here for completeness rather than featured as a principal project metric.
+- [ ] Preserve a clean, reviewed private branch and merge the validated offline scenario work.
+- [ ] Add dedicated regression protection for the corrected caller-level reconciliation path.
+- [ ] Develop and validate a separate, mandatory, fail-closed startup integrity check.
+- [ ] Record an explicitly authorized first real paper-order submission, acknowledgment, persistent state, and reconciliation.
+- [ ] Continue fault injection and measure test coverage separately if needed.
 
-## Current gaps and upcoming evidence
+## Historical note
 
-- [ ] Add and run direct main-caller reconciliation regression scenarios
-- [ ] Record selected persistence and journal failure-injection outcomes
-- [ ] Verify more interrupted and partially completed operations
-- [ ] Gather repeatable supervised paper-integration evidence
-- [ ] Record dated results, environments, and outcome totals for future runs
+Earlier November 16 documentation listed 29 private test modules and only three recently reported passing suites. That was an earlier snapshot, **superseded for the 25-script offline allowlist by the November 17 Baseline 4 result**. The total inventory remains 29 modules, with the four real broker scripts excluded from offline runs.
 
-**Reporting principle:** A test file's existence is not a current pass, and mock success is not live integration success. See [Engineering Achievements](ENGINEERING_ACHIEVEMENTS.md) and [Risk Management & Safety](docs/RISK_AND_SAFETY.md).
+The separate public CSV coursework exercise previously passed 6/6 local unit tests. It is not part of this private trading-agent baseline.
+
+**Reporting principle:** A pass in a simulated offline scenario does not establish a successful real broker transaction. The public report summarizes outcomes without publishing source code, local operational logs, financial-account data, or configuration values.

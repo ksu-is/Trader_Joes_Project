@@ -5,19 +5,19 @@
 
 Trader Joe's Agent is an ongoing Python software engineering project that combines market analysis, candidate discovery, supervised operation, operational safeguards, and reliability testing. This repository is its **coursework-facing development portfolio**, not the operational trading engine.
 
-> **Current stage:** Active development and supervised paper-environment validation. Implemented features and passing offline tests are **not** evidence of complete broker-lifecycle validation, profitability, or production readiness.
+> **Current stage (November 17, 2026):** Pre-submission paper-environment development with a recorded **25/25 passing offline regression baseline**. Real broker order submission, acknowledgment, and end-to-end reconciliation have **not** yet been verified; neither profitability nor production readiness is claimed.
 
 ## Project at a glance
 
 | Metric | Reviewed evidence | Interpretation |
 | --- | --- | --- |
-| **29 private Python test modules** | Files named `test_*.py` on the private main branch, reviewed November 16, 2026 | Test **modules**, not individual cases and not 29 confirmed passing suites |
-| **19 reviewed private commits** | Main-branch history snapshot as of November 16, 2026 (Eastern time) | Development activity, not a measure of feature completeness |
-| **First Git record: October 7, 2026** | Earliest reviewed commit | Project work may have started earlier |
-| **3 selected private suites reported passing** | Reconciliation, execution-permission, and cross-operation guard suites | Developer-reported local, mostly simulated verification; not full-suite CI |
-| **1 documented control-flow correction** | Private fix and associated regression maintenance | Direct caller-level regression still planned |
+| **29 private Python test modules** | Test inventory reviewed November 17, 2026 | 25 in the approved offline suite, 4 kept separate as real paper-broker integration scripts |
+| **25/25 approved offline scripts passed** | Developer-run Baseline 4, November 17, 2026; exit code 0 | One complete allowlisted offline regression run; not real broker execution or measured coverage |
+| **Persistent offline regression runner** | Records per-script exit codes, success markers, timestamped logs, summary CSV/JSON, and tested Git revision | Repeatable developer-local evidence; not independent public-repository CI |
+| **First Git record: October 7, 2026** | Earliest previously reviewed private commit | Project work may have started earlier |
+| **Paper submission readiness** | Pre-submission paper testing reported by developer | No actual broker paper-order submission or acknowledgment verified end-to-end |
 
-See [Development History](DEVELOPMENT_HISTORY.md) and [Test Results](TEST_RESULTS.md) for the source and limitations of these counts.
+See [Test Results](TEST_RESULTS.md), [Development History](DEVELOPMENT_HISTORY.md), and [Engineering Achievements](ENGINEERING_ACHIEVEMENTS.md) for scope and historical context.
 
 ## Engineering capabilities
 
@@ -47,20 +47,13 @@ The risk-management work covers broad concerns applicable to trading software, i
 
 ## Quality assurance and regression testing
 
-Trader Joe's Agent currently contains **29 private Python test modules**. These tests have been developed and exercised throughout the project's evolution, with passing results observed during earlier development stages. Many of these tests have been run repeatedly after changes to the application, with passing results observed across earlier stages. Following substantial changes to the application, a **complete recorded regression run against the current version remains pending**. Three selected private suites were more recently reported passing locally; the module count is not a pass count.
+On **November 17, 2026**, the developer ran a permanent, allowlisted offline regression runner on the private codebase: **25 selected scripts passed, none failed, and the runner exited with code 0**. The run is associated with private Git revision `53c30cf3ebc796194b629290b4634c3456052853` and a timestamped local report. Four real Webull paper-integration scripts are deliberately excluded from the automatic offline suite.
 
-Selected, broadly applicable test categories are:
+The expanded suite covers execution permissions, explicit human authorization, order transitions, mock submission guards, duplicate prevention, simulated timeout and ambiguous-acknowledgment handling, persistence, reconciliation, journal records, fill handling, and recovery scenarios. Several older scenario tests were revised to use temporary state and mocked interactions rather than normal application data.
 
-| Area | Typical engineering question |
-| --- | --- |
-| **Risk validation** | Do proposed operations respect defined safeguards? |
-| **Human authorization** | Can a restricted action proceed without the required review? |
-| **Duplicate-operation prevention** | Can repeated or conflicting actions be detected? |
-| **Persistent state** | Does necessary information survive interruptions? |
-| **Error and uncertainty handling** | Does the application respond conservatively to failures or ambiguous outcomes? |
-| **Audit and traceability** | Are important actions represented in reviewable records? |
+**Scope:** This is a developer-reported run of 25 approved Python scripts, not a count of all assertions, a test-coverage percentage, a CI result, or proof of actual broker-submitted orders. The dedicated startup integrity gate is a **planned** feature and is distinct from the full offline regression suite.
 
-These are **test themes**, not a claim that each entire category passed in every environment. For recorded outcomes and remaining gaps, read [Test Results](TEST_RESULTS.md).
+[Read the recorded results and limitations](TEST_RESULTS.md).
 
 ## Development journey
 
@@ -70,7 +63,8 @@ These are **test themes**, not a claim that each entire category passed in every
 | **October 13–15, 2026** | Expanded safeguards, state handling, integration support, and testing |
 | **October 20–26, 2026** | Continued controlled-operation and recovery hardening |
 | **November 16, 2026 (Eastern)** | Test-harness refinements and a reconciliation control-flow correction |
-| **Next** | Dedicated regression coverage, continued failure injection, and supervised paper verification |
+| **November 17, 2026** | Offline Baseline 4: 25/25 scripts passed; persistent fail-on-error reporting added; six scenario scripts isolated |
+| **Next** | Startup integrity design, targeted regression expansion, and controlled first paper-order submission |
 
 [Full Git-backed development history](DEVELOPMENT_HISTORY.md) · [Engineering achievements](ENGINEERING_ACHIEVEMENTS.md) · [Engineering changelog](CHANGELOG.md)
 
@@ -81,8 +75,9 @@ The development history is more than a list of features. Several milestones addr
 - **October 20 — Safer startup:** Introduced deliberate operator authorization and a non-executing observation mode so a fresh launch does not itself imply permission to act.
 - **October 26 — Persistence and recovery:** Strengthened state preservation, duplicate-operation protection, and tests for uncertain outcomes across interruptions and separate processes.
 - **November 16 — Defect correction and test maintenance:** Corrected a reconciliation control-flow issue and updated regression harnesses to better reflect current safety expectations.
+- **November 17 — Repeatable offline verification:** Repaired two outdated test assumptions, isolated six scenario scripts, and recorded a 25/25 passing run with a persistent regression runner.
 
-The October 26 commit recorded passing simulated recovery tests *at that time*. A complete rerun against the latest application state is still needed.
+November 17 Baseline 4 supersedes the earlier incomplete-suite status for the **25-script offline allowlist**, while real broker execution remains unverified.
 
 [Read the engineering case studies](ENGINEERING_ACHIEVEMENTS.md) for the challenge, change, engineering lesson, and evidence behind each milestone. The [Engineering Decision Log](DECISION_LOG.md) explains important alternatives, tradeoffs, and why certain upgrades were postponed.
 
@@ -98,11 +93,11 @@ The **Chimp Office** is an optional Phaser 4 concept meant to make Trader Joe's 
 
 ## Upcoming priorities
 
-1. Add an explicit regression exercising the corrected caller-level reconciliation path.
-2. Continue isolated persistence, recovery, and journaling failure testing.
-3. Record repeatable controlled paper-integration results before claiming greater maturity.
-4. Complete outstanding coursework, reference-project evaluation, and instructor requirements.
-5. Prepare a sanitized, non-executing demonstration of the **actual private application** later in the semester.
+1. Keep the 25-script offline regression baseline repeatable and inspect new failures rather than weakening safety controls.
+2. Add a small, separate, mandatory fail-closed startup integrity check; do not auto-arm paper execution.
+3. Continue targeted failure injection and a dedicated caller-level reconciliation regression.
+4. Complete a carefully authorized, supervised first paper-order submission and verify acknowledgment, persistence, and broker reconciliation.
+5. Prepare a sanitized, non-executing demonstration of the private application for coursework.
 
 [Full semester roadmap](ROADMAP.md) · [Sprint 1](SPRINT_1.md)
 
